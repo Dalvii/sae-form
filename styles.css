@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Haas Grotesk Med";
+    src: url("/fonts/NHaasGroteskTXPro-65Md.ttf") format("truetype"),
+}
+/* @font-face {
+    font-family: "Haas Grotesk Light";
+    src: url("/fonts/NHaasGroteskTXPro-55Md.ttf") format("truetype"),
+}
+@font-face {
+    font-family: "Haas Grotesk Bold";
+    src: url("/fonts/NHaasGroteskTXPro-75Bd.ttf") format("truetype"),
+} */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    border: 0;
+    background-color: antiquewhite;
+}
+
+main {
+    background-color: white;
+    height: 100vh;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 40px -14px rgb(0 0 0 / 70%);
+    -webkit-box-shadow: 0px 0px 40px -14px rgb(0 0 0 / 70%);
+    -moz-box-shadow: 0px 0px 40px -14px rgba(0,0,0,0.7);
+}
+
+fieldset {
+    border: 0;
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.section_title {
+    display: flex;
+    align-items: center;
+}
+
+.section_title_icon {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(4, 91, 221);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    padding:5px;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+.section_title {
+    color: #5b748f;
+    
+}
+
+.section_subtitle {
+    color: #042140;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.section_input {
+    margin-left: 40px;
+    margin-top: 10px;
+    display: grid;
+    grid-auto-rows: 30px;
+    grid-template-columns: repeat(auto-fit, 75px);
+    grid-gap: 12px;
+}
+
+.item {
+    border: 0.13em solid rgb(196, 196, 196);
+    border-radius: 10px;
+    transition: 0.5s;
+    background-color: rgb(254, 254, 254);
+    min-width: 75px;
+    height: 30px;
+}
+
+.item:focus {
+    border: 0.25em solid rgb(41, 77, 175);
+}

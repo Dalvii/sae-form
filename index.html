@@ -25,28 +25,71 @@
                     <div class="section_title_icon">1</div>
                     <div class="section_title_label">Question 1</div>
                 </div>
-                <div class="section_subtitle">Quel est votre name</div>
-                <div class="section_input_simple">
+                <div class="section_subtitle">Vous êtes :</div>
+                <div class="section_input_text">
                     <div>
-                        <input type="text" id="q0_r0" placeholder="Test" class="item"/>
+                        <input type="text" placeholder="Prénom Nom" class="item" required/>
                     </div>
                 </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="section_title">
-                    <div class="section_title_icon">3</div>
-                    <div class="section_title_label">Question 3</div>
+                <div class="section_input_text">
+                    <div>
+                        <input type="number" placeholder="Age" class="item" required/>
+                    </div>
                 </div>
-                <div class="section_subtitle">Quel est la question</div>
                 <div class="section_input">
                     <div>
-                        <input type="radio" name="q0_r" id="q0_r1" class="item"/>
-                        <label for="q0_r1">💻 Portable</label>
+                        <input type="radio" name="qIntro1_r" id="qIntro1_r1"/>
+                        <label for="qIntro1_r1">🙎 Femme</label>
                     </div>
                     <div>
-                        <input type="radio" name="q0_r" id="q0_r2" class="item"/>
-                        <label for="q0_r2">💿 Fixe</label>
+                        <input type="radio" name="qIntro1_r" id="qIntro1_r2"/>
+                        <label for="qIntro1_r2">🙎‍♂️ Homme</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro1_r" id="qIntro1_r3"/>
+                        <label for="qIntro1_r3">👽 Autre</label>
+                    </div>
+                </div>
+                <div class="section_input_text">
+                    <div class="section_title_label">Localisation :</div>
+                </div>
+                <div class="section_input">
+                    <div>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r1"/>
+                        <label for="qIntro2_r1">🏢 Nice</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r2"/>
+                        <label for="qIntro2_r2">🏠 Banlieue</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r3"/>
+                        <label for="qIntro2_r3">🗻 Arrière Pays</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r4"/>
+                        <label for="qIntro2_r4">🌎 Autre</label>
+                    </div>
+                </div>
+                <div class="section_input_text">
+                    <div class="section_title_label">Votre situation :</div>
+                </div>
+                <div class="section_input">
+                    <div>
+                        <input type="radio" name="qIntro3_r" id="qIntro3_r1"/>
+                        <label for="qIntro3_r1">🍀 Sans emploi</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro3_r" id="qIntro3_r2"/>
+                        <label for="qIntro3_r2">💼 Salarié</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro3_r" id="qIntro3_r3"/>
+                        <label for="qIntro3_r3">📣 Entrepreneur</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="qIntro3_r" id="qIntro3_r4"/>
+                        <label for="qIntro3_r4">👴 Retraité</label>
                     </div>
                 </div>
             </fieldset>
@@ -54,110 +97,64 @@
             <fieldset>
                 <div class="section_title">
                     <div class="section_title_icon">1</div>
-                    <div class="section_title_label">Question 1</div>
+                    <div class="section_title_label">Matériel informatique</div>
                 </div>
-                <div class="section_subtitle">Possédez vous un ordinateur : </div>
+                <div class="section_subtitle">Possédez-vous un ordinateur ?</div>
                 <div class="section_input">
                     <div>
-                        <input type="radio" name="q1_r" id="q1_r1" class="item"/>
+                        <input type="radio" name="q1_r" id="q1_r1" class="item expand" required/>
                         <label for="q1_r1">Oui</label>
                         <!-- Sous question -->
                         <div class="sous_question">
-                            <div class="sous_question_section_title">
-                                <div class="sous_section_subtitle">Test</div>
-                            </div>
+                            <div class="sous_section_subtitle">De type ?</div>
+
                             <div class="section_input">
                                 <div>
-                                    <input type="radio" name="q1-1_r" id="q1-1_r1" class="item"/>
-                                    <label for="q1-1_r1">💿 Ordinateur Fixe</label>
-                                            <!-- Sous sous question -->
-                                            <div class="sous_question">
-                                                <div class="sous_question_section_title">
-                                                    <div class="sous_section_subtitle">Quelle système d'exploitation utilise t-il ?</div>
-                                                </div>
-                                                <div class="section_input">
-                                                    <div>
-                                                        <input type="radio" name="q1-1-1_r" id="q1-1-1_r1" class="item"/>
-                                                        <label for="q1-1-1_r1">🔠 Windows</label>
-                                                    </div>
-                                                    <div>
-                                                        <input type="radio" name="q1-1-1_r" id="q1-1-1_r2" class="item"/>
-                                                        <label for="q1-1-1_r2">🍎 MacOs</label>
-                                                    </div>
-                                                    <div>
-                                                        <input type="radio" name="q1-1-1_r" id="q1-1-1_r3" class="item"/>
-                                                        <label for="q1-1-1_r3">🐧 Linux</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <input type="radio" name="q1-1_r" id="q1-1_r1"/>
+                                    <label for="q1-1_r1">💿 Fixe</label>
                                 </div>
                                 <div>
-                                    <input type="radio" name="q1-1_r" id="q1-1_r2" class="item"/>
-                                    <label for="q1-1_r2">💻 Ordinateur Portable</label>
-                                            <!-- Sous sous question -->
-                                            <div class="sous_question">
-                                                <div class="sous_question_section_title">
-                                                    <div class="sous_question_section_title_icon"></div>
-                                                    <div class="sous_section_subtitle">Quelle système d'exploitation utilise t-il ? </div>
-                                                </div>
-                                                <div class="section_input">
-                                                    <div>
-                                                        <input type="radio" name="q1-1-2_r" id="q1-1-2_r1" class="item"/>
-                                                        <label for="q1-1-2_r1">🔠 Windows</label>
-                                                    </div>
-                                                    <div>
-                                                        <input type="radio" name="q1-1-2_r" id="q1-1-2_r2" class="item"/>
-                                                        <label for="q1-1-2_r2">🍎 MacOs</label>
-                                                    </div>
-                                                    <div>
-                                                        <input type="radio" name="q1-1-2_r" id="q1-1-2_r3" class="item"/>
-                                                        <label for="q1-1-2_r3">🐧 Linux</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <input type="radio" name="q1-1_r" id="q1-1_r2"/>
+                                    <label for="q1-1_r2">💻 Portable</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <input type="radio" name="q1_r" id="q1_r2" class="item"/>
+                        <input type="radio" name="q1_r" id="q1_r2"/>
                         <label for="q1_r2">Non</label>
                     </div>
                 </div>
-
             </fieldset>
 
            <fieldset>
                 <div class="section_title">
                     <div class="section_title_icon">2</div>
-                    <div class="section_title_label">Question 2</div>
+                    <div class="section_title_label">Matériel informatique</div>
                 </div>
-                <div class="section_subtitle">Possédez vous une imprimante/scanner :</div>
+                <div class="section_subtitle">Possédez-vous une imprimante/scanner ?</div>
                 <div class="section_input">
                     <div>
-                        <input type="radio" name="q2_r" id="q2_r1" class="item"/>
-                        <label for="q0_r1">Oui</label>
+                        <input type="radio" name="q2_r" id="q2_r1" class="item expand" required/>
+                        <label for="q2_r1">Oui</label>
                                 <!-- Sous question -->
                                 <div class="sous_question">
-                                    <div class="section_title">
-                                        <div class="sous_question_section_title_icon"></div>
-                                    </div>
-                                    <div class="sous_section_subtitle">Avez vous souvent des problèmes avec :</div>
+                                    <div class="sous_section_subtitle">Avez-vous souvent des problèmes avec ?</div>
                                     <div class="section_input">
                                         <div>
-                                            <input type="radio" name="q2-1_r" id="q2-1_r1" class="item"/>
+                                            <input type="radio" name="q2-1_r" id="q2-1_r1"/>
                                             <label for="q2-1_r1">Oui</label>
                                         </div>
                                         <div>
-                                            <input type="radio" name="q2-1_r" id="q2-1_r2" class="item"/>
+                                            <input type="radio" name="q2-1_r" id="q2-1_r2"/>
                                             <label for="q2-1_r2">Non</label>
                                         </div>
                                     </div>
-                        </div>
+                                </div>
                     </div>
                     <div>
-                        <input type="radio" name="q2_r" id="q2_r2" class="item"/>
-                        <label for="q0_r2">Non</label>
+                        <input type="radio" name="q2_r" id="q2_r2"/>
+                        <label for="q2_r2">Non</label>
                     </div>
                 </div>
             </fieldset>
@@ -165,16 +162,16 @@
             <fieldset>
                 <div class="section_title">
                     <div class="section_title_icon">3</div>
-                    <div class="section_title_label">Question 3</div>
+                    <div class="section_title_label">Matériel informatique</div>
                 </div>
-                <div class="section_subtitle">Est ce que votre activité professionnelle dépend de votre matériel informatique :</div>
+                <div class="section_subtitle">Votre activité professionnelle dépend-elle de votre matériel informatique ?</div>
                 <div class="section_input">
                     <div>
-                        <input type="radio" name="q3_r" id="q3_r1" class="item"/>
+                        <input type="radio" name="q3_r" id="q3_r1" required/>
                         <label for="q3_r1">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" name="q3_r" id="q3_r2" class="item"/>
+                        <input type="radio" name="q3_r" id="q3_r2"/>
                         <label for="q3_r2">Non</label>
                     </div>
                 </div>
@@ -186,148 +183,11 @@
 
             <fieldset>
                 <div class="section_title">
-                    <div class="section_title_icon">4</div>
-                    <div class="section_title_label">Question 4</div>
-                </div>
-                <div class="section_subtitle">Quel serait le service informatique le plus utile a vos yeux :</div>
-                <div class="section_input_simple">
-                    <div>
-                        <input type="radio" name="q4_r" id="q4_r1" class="item"/>
-                        <label for="q4_r1">Dépannage et réparation informatique</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q4_r" id="q4_r2" class="item"/>
-                        <label for="q4_r2">Suivi et entretien de votre ordinateur</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q4_r" id="q4_r3" class="item"/>
-                        <label for="q4_r3">Formations (bases de l’informatique)</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q4_r" id="q4_r4" class="item"/>
-                        <label for="q4_r4">Vente d’ordinateur personnalisé</label>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="section_title">
-                    <div class="section_title_icon">5</div>
-                    <div class="section_title_label">Question 5</div>
-                </div>
-                <div class="section_subtitle">Quels seraient les critères de choix de cette entreprise :</div>
-                <div class="section_input_simple">
-                    <div>
-                        <input type="radio" name="q5_r" id="q5_r1" class="item"/>
-                        <label for="q5_r1">Rapport qualité du service</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q5_r" id="q5_r2" class="item"/>
-                        <label for="q5_r2">Tarification</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q5_r" id="q5_r3" class="item"/>
-                        <label for="q5_r3">Compétences des techniciens</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q5_r" id="q5_r4" class="item"/>
-                        <label for="q5_r4">Être à l'écoute de vos besoins</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q5_r" id="q5_r5" class="item"/>
-                        <label for="q5_r5">Qualité relationnelle</label>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="section_title">
-                    <div class="section_title_icon">6</div>
-                    <div class="section_title_label">Question 6</div>
-                </div>
-                <div class="section_subtitle">Lors de l’achat d’un ordinateur, ou vous rendez-vous :</div>
-                <div class="section_input">
-                    <div>
-                        <input type="radio" name="q6_r" id="q6_r1" class="item"/>
-                        <label for="q6_r1">Grande surface</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q6_r" id="q6_r2" class="item"/>
-                        <label for="q6_r2">Internet</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q6_r" id="q6_r3" class="item"/>
-                        <label for="q6_r3">Boutique indépendante</label>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="section_title">
-                    <div class="section_title_icon">3</div>
-                    <div class="section_title_label">Teste Double SLIDE</div>
-                </div>
-                <div class="section_subtitle">Quel est la question</div>
-                <div class="section_range">
-                    <div class="v_doubleSlide">
-                        <input type="range" min="100" max="350" step="1">
-                        <input type="range" min="350" max="600" step="1">
-                    </div>
-                    <div class="v_echelle">
-                        <div class="v_barre"></div>
-                        <div class="v_batton">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="v_nombre">
-                            <span>100</span>
-                            <span>200</span>
-                            <span>300</span>
-                            <span>400</span>
-                            <span>500</span>
-                            <span>600</span>
-                        </div>
-                    </div>
-                </div>             
-            </fieldset>
-
-            <fieldset>
-                <div class="section_title">
                     <div class="section_title_icon">8</div>
-                    <div class="section_title_label">Question </div>
+                    <div class="section_title_label">Compétences informatiques</div>
                 </div>
-                <div class="section_subtitle">Si vous deviez faire appel à un réparateur informatique, quels moyens utiliseriez-vous ?</div>
-                <div class="section_input_simple">
-                    <div>
-                        <input type="radio" name="q8_r" id="q8_r1" class="item"/>
-                        <label for="q8_r1">Bouche à oreille (recommandation de proches)</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q8_r" id="q8_r2" class="item"/>
-                        <label for="q8_r2">Via un prospectus reçu en boîte aux lettres</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q8_r" id="q8_r3" class="item"/>
-                        <label for="q8_r3">Via un moteur de recherche Internet</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q8_r" id="q8_r4" class="item"/>
-                        <label for="q8_r4">Via un annuaire (internet ou papier)</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="q8_r" id="q8_r5" class="item"/>
-                        <label for="q8_r5">Via une société d’aide à domicile</label>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="choix">
-                <label for="">Teste Choix 1 a 10</label> <br>
-                <div>
+                <div class="section_subtitle">Comment jugez-vous votre niveau de compétence en réparation informatique ?</div>
+                <div class="section_input section_input_1a10">
                     <div>
                         <input type="radio" name="1a10" id="1">
                         <label for="1"> 1 </label>
@@ -370,6 +230,178 @@
                     </div>
                 </div>
             </fieldset>
+
+            <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">4</div>
+                    <div class="section_title_label">Services informatiques</div>
+                </div>
+                <div class="section_subtitle">Quel serait le service informatique le plus utile à vos yeux ?</div>
+                <div class="section_input_simple">
+                    <div>
+                        <input type="radio" name="q4_r" id="q4_r1" required/>
+                        <label for="q4_r1">🔨 Dépannage et réparation informatique</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q4_r" id="q4_r2"/>
+                        <label for="q4_r2">🔋 Suivi et entretien de votre ordinateur</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q4_r" id="q4_r3"/>
+                        <label for="q4_r3">📙 Formations (bases de l’informatique)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q4_r" id="q4_r4"/>
+                        <label for="q4_r4">🔍 Vente d’ordinateur personnalisé</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">5</div>
+                    <div class="section_title_label">Préférence client</div>
+                </div>
+                <div class="section_subtitle">Quels seraient les critères de choix de cette entreprise ?</div>
+                <div class="section_input_simple">
+                    <div>
+                        <input type="checkbox" name="q5_r" id="q5_r1" required/>
+                        <label for="q5_r1">🧮 Rapport qualité du service</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q5_r" id="q5_r2"/>
+                        <label for="q5_r2">💵 Tarification</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q5_r" id="q5_r3"/>
+                        <label for="q5_r3">🔧 Compétences des techniciens</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q5_r" id="q5_r4"/>
+                        <label for="q5_r4">👂 Être à l'écoute de vos besoins</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q5_r" id="q5_r5"/>
+                        <label for="q5_r5">🤝 Qualité relationnelle</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset id="q6">
+                <div class="section_title">
+                    <div class="section_title_icon">6</div>
+                    <div class="section_title_label">Préférence d’achat</div>
+                </div>
+                <div class="section_subtitle">Lors de l’achat d’un ordinateur, ou vous rendez-vous ?</div>
+                <div class="section_input">
+                    <div>
+                        <input type="radio" name="q6_r" id="q6_r1" required/>
+                        <label for="q6_r1">🛒 Grande surface</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q6_r" id="q6_r2"/>
+                        <label for="q6_r2">🌐 Internet</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="q6_r" id="q6_r3"/>
+                        <label for="q6_r3">🛍 Boutique indépendante</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">3</div>
+                    <div class="section_title_label">Budget</div>
+                </div>
+                <div class="section_subtitle">Quel budget seriez-vous près à allouer ?</div>
+                <div class="section_range">
+                    <div class="v_doubleSlide">
+                        <input type="range" min="100" max="350" step="1" >
+                        <input type="range" min="350" max="600" step="1">
+                    </div>
+                    <div class="v_echelle">
+                        <div class="v_barre"></div>
+                        <div class="v_batton">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="v_nombre">
+                            <span>200</span>
+                            <span>400</span>
+                            <span>600</span>
+                            <span>800</span>
+                            <span>1000</span>
+                            <span>1200</span>
+                        </div>
+                    </div>
+                </div>             
+            </fieldset>
+
+            <!-- <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">3</div>
+                    <div class="section_title_label">Teste Double SLIDE</div>
+                </div>
+                <div class="section_subtitle">Quel est la question</div>
+                <div class="section_range">
+                    <div class="doubleSlide">
+                        <input type="range" min="0" value="60" max="100" step="1">
+                        <input type="range" min="0" value="30" max="100" step="1">
+                    </div>
+                    <div class="barre"></div>
+                </div>             
+            </fieldset> -->
+
+            <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">8</div>
+                    <div class="section_title_label">Question </div>
+                </div>
+                <div class="section_subtitle">Si vous deviez faire appel à un réparateur informatique, quels moyens utiliseriez-vous ?</div>
+                <div class="section_input_simple">
+                    <div>
+                        <input type="checkbox" name="q8_r" id="q8_r1"/>
+                        <label for="q8_r1">👂 Bouche à oreille (recommandation de proches)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q8_r" id="q8_r2"/>
+                        <label for="q8_r2">📬 Via un prospectus reçu en boîte aux lettres</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q8_r" id="q8_r3"/>
+                        <label for="q8_r3">🌐 Via un moteur de recherche Internet</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q8_r" id="q8_r4"/>
+                        <label for="q8_r4">📁 Via un annuaire (internet ou papier)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="q8_r" id="q8_r5"/>
+                        <label for="q8_r5">🙌 Via une société d’aide à domicile</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="section_title">
+                    <div class="section_title_icon">9</div>
+                    <div class="section_title_label"> </div>
+                </div>
+                <div class="section_subtitle">Avez-vous des remarques ?</div>
+                <div class="section_input_text">
+                    <div>
+                        <textarea id="story" name="story" class="item" placeholder="test"></textarea>     
+                    </div>
+
+                </div>
+            </fieldset>
+            
+            <button type="submit">test</button>
         </form>
     </main>
 </body>

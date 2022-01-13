@@ -11,6 +11,10 @@
     src: url("/fonts/NHaasGroteskTXPro-75Bd.ttf") format("truetype"),
 } */
 
+:root {
+    --blue-color: #045bdd
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
@@ -39,23 +43,23 @@ fieldset {
     border: 0;
     width: 70%;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .section_title, .sous_question_section_title {
     display: flex;
     align-items: center;
-    width: 320%;
+    /* width: 320%; */
 }
 
 .section_title_icon {
     width: 25px;
     height: 25px;
-    background-color: rgb(4, 91, 221);
+    background-color: var(--blue-color);
     border-radius: 50%;
     color: white;
     text-align: center;
-    padding:5px;
+    padding: 3px;
     font-weight: normal;
     margin-right: 15px;
 }
@@ -69,52 +73,56 @@ fieldset {
     font-weight: bold;
     font-size: 24px;
     margin-left: 40px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .item {
-    border: 0.13em solid rgb(196, 196, 196);
+    background-color: rgb(250, 250, 250);
+    height: 100%;
+    border: 0.15em solid #ededed;
+    margin-left: 5px;
     border-radius: 10px;
-    transition: 0.5s;
-    background-color: rgb(254, 254, 254);
-    min-width: 75px;
-    height: 30px;
+    transition: 0.3s;
+    text-indent: 8px;
+    color: #99a2b1;
+    justify-content: center;
 }
 
 .item:focus {
-    border: 0.25em solid rgb(41, 77, 175);
+    border: 0.125em solid #0c6dde;
+    animation: click 0.3;
+    color: #344964;
+}
+.item::placeholder {
+    color: #848c99;
 }
 
 input[type="text"] {
     width: 50%;
 }
 
-input[type="text"]:focus {
-    width: 80%;
-    height: 200px;
-    border: 0.25em solid blue;
-}
 
 
 .section_input {
-    margin-left: 40px;
-    margin-top: 10px;
     display: flex;
-    /* grid-auto-rows: 30px;
-    grid-template-columns: repeat(auto-fit, 105px);
-    grid-gap: 12px; */
+    flex-wrap: wrap;
+    /* grid-auto-rows: 30px; */
+    /* grid-template-columns: repeat(auto-fit, 105px); */
+    /* grid-gap: 12px; */
 }
 
-.section_input_simple {
+.section_input_simple, .section_input, .section_range, .section_input_text {
     margin-left: 40px;
     margin-top: 10px;
     width: 100%;
 }
 
-.section_range {
-    margin-left: 40px;
-    margin-top: 10px;
-    width: 100%;
+.section_input_text > div {
+    height: 37px;
+}
+
+.section_input_text > .section_title_label {
+    height: auto;
 }
 
 label {
@@ -123,8 +131,8 @@ label {
 
 
 .section_input > div {
-    width: 110px;
-    height: 35px;
+    width: 150px;
+    /* height: 35px; */
     margin: 5px;
 }
 
@@ -143,8 +151,9 @@ label {
 .section_input > div > label, .section_input_simple > div > label  {
     height: 100%;
     width: 100%;
-    border: 0.125em solid #f6f7fb;
+    border: 0.125em solid #ededed;
     border-radius: 10px;
+    background-color: rgb(250, 250, 250);
     margin: 0;
     transition: 0.3s;
     text-align: center;
@@ -155,20 +164,40 @@ label {
     justify-content: center;
 }
 
-
-.section_input > div > input:checked ~ label, .section_input_simple > div > input:checked ~ label  {
-    border: 0.125em solid #0c6dde;
-    color: #344964;
+.section_input > div > label {
+    height: 37px;
 }
 
 
+.section_input > div > input:checked ~ label, .section_input_simple > div > input:checked ~ label  {
+    border: 0.125em solid #0c6dde;
+    animation: click 0.3;
+    color: #344964;
+}
+
+/* .section_input > div > input:invalid ~ label, .section_input_simple > div > input:invalid ~ label  {
+    border: 0.125em solid #de1a0c;
+    color: #344964;
+} */
+
+.section_input > div > input.expand:checked ~ label {
+    margin-top: 85px;
+    transform: translateY(-85px);
+}
+
 .section_input > div > input:checked ~ div {
     display: block;
+    opacity: 1;
+    transform: translateY(-85px);
 }
 
 
 .sous_question {
     display: none;
+    transition: 1s;
+    opacity: 0;
+    position: absolute;
+    margin-top: 10px;
 }
 
 .sous_section_subtitle {
@@ -184,16 +213,21 @@ label {
     align-items: center;
     width: 10px;
     height: 10px;
-    margin: 1px 10px;
+    position: absolute;
+    margin: 7px -16px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: var(--blue-color);
 }
 
-.sous_question_section_title_icon {
-    width: 4px;
-    height: 4px;
-    border-radius: 5px;
-    background-color: blue;
+
+.section_input_simple > div > label {
+    justify-content: start;
+    padding-left: 15px;
+}
+
+
+#q6 > .section_input > div > label {
+    height: 60px;
 }
 
 
@@ -212,35 +246,40 @@ label {
     -webkit-appearance: none;
 }
 
-
-
 /*//// Mozzila ////*/
 
-.v_doubleSlide input::-moz-range-track{
-    background-color: royalblue;
-    height: 4px;
+.v_doubleSlide input:first-of-type::-moz-range-progress {
+    background-color: white;
+    height: 4px;    
 }
 
 .v_doubleSlide input:first-of-type::-moz-range-track{
-    background-color: royalblue;
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px;
-}
-
-.v_doubleSlide input:last-of-type::-moz-range-track{
-    background-color: royalblue;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-}
-
-.v_doubleSlide input::-moz-range-progress {
-    background-color: rgb(45, 172, 66);
+    background-color: var(--blue-color);
     height: 4px;
+    border : 0.5px solid black;
+    border-right: 0.5px solid var(--blue-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: 2px black solid
+}
+
+.v_doubleSlide input:last-of-type::-moz-range-progress {
+    background-color: var(--blue-color);
+    height: 4px;    
+}
+
+.v_doubleSlide input:last-of-type::-moz-range-track {
+    background-color: white;
+    border : 0.5px solid black;
+    border-left: 0.5px solid var(--blue-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 4px;    
 }
 
 .v_doubleSlide input::-moz-range-thumb{
     border-radius: 100%;
-    border : 6px solid royalblue;
+    border : 6px solid var(--blue-color);
     width: 14px;
     height:14px;
     background-color: white;
@@ -250,20 +289,30 @@ label {
 /*//// Wekbkit ////*/
 
 .v_doubleSlide input::-webkit-slider-runnable-track{
-    background-color: rgb(206, 161, 37);
-    height: 4px;
+    background-color: var(--blue-color);
+    height: 5px;
 }
 
+.v_doubleSlide input:first-of-type::-webkit-slider-runnable-track{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.v_doubleSlide input:last-of-type::-webkit-slider-runnable-track{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
 .v_doubleSlide input::-webkit-slider-thumb{
     -webkit-appearance: none;
     border-radius: 100%;
-    border : 6px solid royalblue;
-    width: 18px;
-    height: 18px;
+    border : 6px solid var(--blue-color);
+    width: 24px;
+    height: 24px;
     background-color: white;
-    margin-top: -5px;
+    margin-top: -8px;
 }
+
 
 /*//// Echelle et graduation ////*/
 
@@ -271,15 +320,17 @@ label {
 .v_echelle {
     width: 97%;
     margin: 0 auto;
+    margin-top :14px;
 }
 
 .v_barre {
-    border-bottom: 1px solid blue;
+    border-bottom: 2.5px solid var(--blue-color);
 }
 
 .v_batton {
     display: flex;
     justify-content: space-between;
+    margin-top: -8px;
 }
 
 .v_nombre {
@@ -290,7 +341,7 @@ label {
 .v_batton div{
     width: 3px;
     height: 6px;
-    background-color: blue;
+    background-color: var(--blue-color);
 }
 
 
@@ -302,89 +353,94 @@ label {
 /*///////////////        Style Choix 1 à 10         ////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
-.choix div{
-    width: 450px;
-    margin: auto;
-}
-.choix div > div{
-    display: inline-block;
-    width: 40px;
+.section_input_1a10 {
+    display : flex;
 }
 
-.choix div > div input {
-    display: block;
+.section_input_1a10 div {
+    width : 4.5vw;
+    height : 5vw;
+    max-width: 200px;
+    max-height: 200px;
+    font-size: 3.5vw;
 }
 
-.choix div > div > label {
-    display: block;
-    margin-left: 7px;
-
-}
-.choix div > div:last-of-type > label {
-    margin-left: 5px;
-}
-  
-
-
-
-
-
-
-/* double slide v */
-
-
-.v_doubleSlide {
-    display: flex;
+.section_input_text div textarea {
+    resize: vertical;
+    width : 80%;
 }
 
-.v_doubleSlide input {
+@keyframes click {
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 10px;
+
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+
+/* 
+.doubleSlide input {
+    position: absolute;
+    -webkit-appearance: none;
+    z-index: 1;
+
+}
+.barre {
+    border-bottom: 7px solid blue;
     width: 100%;
-    -webkit-appearance: none;
-}
-
-.v_echelle {
-    width: 97%;
-    margin: 0 auto;
-}
-
-.v_barre {
-    border-bottom: 1px solid blue;
-}
-
-.v_batton {
-    display: flex;
-    justify-content: space-between;
-}
-
-.v_nombre {
-    display: flex;
-    justify-content: space-between
-}
-
-.v_batton div{
-    width: 3px;
     height: 6px;
-    background-color: blue;
+    z-index: 0;
+    position: absolute;
 }
-
-
-.v_doubleSlide input::-webkit-slider-runnable-track{
-    background-color: rgb(206, 161, 37);
-    height: 4px;
-}
-
-
-.v_doubleSlide input::-webkit-slider-thumb{
+.doubleSlide input::-webkit-slider-thumb{
     -webkit-appearance: none;
-    border-radius: 100%;
-    border : 6px solid royalblue;
-    width: 18px;
-    height: 18px;
-    background-color: white;
-    margin-top: -5px;
+    height: 20px;
+    width: 20px;
+    z-index: 2;
+    background-color: rgb(170, 2, 2);
+    color: red;
 }
+.doubleSlide input:first-of-type::-webkit-slider-thumb{
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+.doubleSlide input:last-of-type::-webkit-slider-thumb{
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.doubleSlide input::-webkit-slider-runnable-track{
+    z-index: 0;
+    height: 0px;
+} */
 
-.v_doubleSlide input::-moz-range-progress {
-    background-color: rgb(45, 172, 66);
-    height: 4px;
+
+
+@media screen and (max-width: 767px) { 
+    main {
+        width: 90%;
+    }
+    fieldset {
+        width: 80%;
+    }
+    .sous_section_subtitle {
+        margin-left: 10px;
+    }
+
+    .section_input_simple, .section_input, .section_range, .section_input_text {
+        margin: 10px auto;
+        width: 100%;
+    }
+    .section_subtitle {
+        margin-left: 0;
+    }
+    .sous_question {
+        margin-left: 30px;
+    }
+    .section_input_simple > div {
+        width: 100%;
+    }
 }

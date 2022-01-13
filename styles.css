@@ -45,6 +45,7 @@ fieldset {
 .section_title, .sous_question_section_title {
     display: flex;
     align-items: center;
+    width: 320%;
 }
 
 .section_title_icon {
@@ -110,6 +111,12 @@ input[type="text"]:focus {
     width: 100%;
 }
 
+.section_range {
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 100%;
+}
+
 label {
     display: block;
 }
@@ -121,13 +128,19 @@ label {
     margin: 5px;
 }
 
-.section_input > div > input {
+.section_input_simple > div {
+    width: 80%;
+    height: 45px;
+    margin: 5px;
+}
+
+.section_input > div > input, .section_input_simple > div > input {
     display: none;
 }
 
 
 
-.section_input > div > label {
+.section_input > div > label, .section_input_simple > div > label  {
     height: 100%;
     width: 100%;
     border: 0.125em solid #f6f7fb;
@@ -143,10 +156,11 @@ label {
 }
 
 
-.section_input > div > input:checked ~ label {
+.section_input > div > input:checked ~ label, .section_input_simple > div > input:checked ~ label  {
     border: 0.125em solid #0c6dde;
     color: #344964;
 }
+
 
 .section_input > div > input:checked ~ div {
     display: block;
@@ -157,7 +171,30 @@ label {
     display: none;
 }
 
+.sous_section_subtitle {
+    color: #042140;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.sous_section_subtitle::before {
+    display: inline-block;
+    content: " ";
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    margin: 1px 10px;
+    border-radius: 50%;
+    background-color: blue;
+}
 
+.sous_question_section_title_icon {
+    width: 4px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: blue;
+}
 
 
 
@@ -171,6 +208,7 @@ label {
 
 .v_doubleSlide input {
     width: 100%;
+    margin: 0;
     -webkit-appearance: none;
 }
 

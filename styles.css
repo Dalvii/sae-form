@@ -20,9 +20,6 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-:root {
-    --taille_double_slide : 60vw;
-}
 
 body {
     margin: 0;
@@ -49,7 +46,6 @@ fieldset {
 .section_title, .sous_question_section_title {
     display: flex;
     align-items: center;
-    /* width: 320%; */
 }
 
 .section_title_icon {
@@ -175,11 +171,6 @@ label {
     color: #344964;
 }
 
-/* .section_input > div > input:invalid ~ label, .section_input_simple > div > input:invalid ~ label  {
-    border: 0.125em solid #de1a0c;
-    color: #344964;
-} */
-
 .section_input > div > input.expand:checked ~ label {
     margin-top: 85px;
     transform: translateY(-85px);
@@ -226,7 +217,7 @@ label {
 }
 
 
-#q6 > .section_input > div > label {
+#q7 > .section_input > div > label {
     height: 60px;
 }
 
@@ -246,7 +237,41 @@ label {
     -webkit-appearance: none;
 }
 
-/*//// Mozzila ////*/
+/*  Double slide superposée 
+.doubleSlide input {
+    position: absolute;
+    -webkit-appearance: none;
+    z-index: 1;
+
+}
+.barre {
+    border-bottom: 7px solid blue;
+    width: 100%;
+    height: 6px;
+    z-index: 0;
+    position: absolute;
+}
+.doubleSlide input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    z-index: 2;
+    background-color: rgb(170, 2, 2);
+    color: red;
+}
+.doubleSlide input:first-of-type::-webkit-slider-thumb{
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+.doubleSlide input:last-of-type::-webkit-slider-thumb{
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.doubleSlide input::-webkit-slider-runnable-track{
+    z-index: 0;
+    height: 0px;
+} */
+
+
+/*//// Double slide Mozzila ////*/
 
 .v_doubleSlide input:first-of-type::-moz-range-progress {
     background-color: white;
@@ -286,7 +311,7 @@ label {
 }
 
 
-/*//// Wekbkit ////*/
+/*//// Double slide Wekbkit ////*/
 
 .v_doubleSlide input::-webkit-slider-runnable-track{
     background-color: var(--blue-color);
@@ -348,27 +373,40 @@ label {
 
 
 
-
-/*//////////////////////////////////////////////////////////////////*/
-/*///////////////        Style Choix 1 à 10         ////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
+/*///////////////           Choix 1 à 10             ////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
 .section_input_1a10 {
     display : flex;
+    flex-wrap: nowrap;
 }
 
 .section_input_1a10 div {
-    width : 4.5vw;
-    height : 5vw;
-    max-width: 200px;
-    max-height: 200px;
-    font-size: 3.5vw;
+    width: auto;
+    flex : 1;
 }
 
+
+/*////////////////////////////////////////////////////////////////////*/
+/*///////////////             TexteArea             /////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
+
 .section_input_text div textarea {
+    transition: none;
+    padding: 10px;
     resize: vertical;
     width : 80%;
+    height: 150px;
+    display: block;
 }
+
+
+
+/*////////////////////////////////////////////////////////////////////*/
+/*///////////////             Animations            /////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
+
 
 @keyframes click {
     0% {
@@ -384,39 +422,9 @@ label {
 }
 
 
-/* 
-.doubleSlide input {
-    position: absolute;
-    -webkit-appearance: none;
-    z-index: 1;
-
-}
-.barre {
-    border-bottom: 7px solid blue;
-    width: 100%;
-    height: 6px;
-    z-index: 0;
-    position: absolute;
-}
-.doubleSlide input::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    z-index: 2;
-    background-color: rgb(170, 2, 2);
-    color: red;
-}
-.doubleSlide input:first-of-type::-webkit-slider-thumb{
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-}
-.doubleSlide input:last-of-type::-webkit-slider-thumb{
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-.doubleSlide input::-webkit-slider-runnable-track{
-    z-index: 0;
-    height: 0px;
-} */
-
+/*////////////////////////////////////////////////////////////////////*/
+/*///////////////             Responsive            /////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
 
 
 @media screen and (max-width: 767px) { 

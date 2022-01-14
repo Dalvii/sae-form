@@ -6,7 +6,34 @@
 
 
 :root {
-    --blue-color: #045bdd
+    --bg-color: #ececec;
+    --main-color: white;
+    --main-text-color: black;
+    --item-bg-color: #fafafa;
+    --item-border-color: #ededed;
+    --item-text-color: #99a2b1;
+    --item-on-border-color: #0c6dde;
+    --item-on-text-color: #344964;
+    --section-sub-color: #5b748f;
+    --section-title-color: #042140;
+    --blue-color: #045bdd;
+    
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #2b2b2b;
+        --main-color: #0e1011;
+        --main-text-color: #f2f0ed;
+        --item-bg-color: #111314;
+        --item-border-color: #2e3335;
+        --item-text-color: #b4aca1;
+        --item-on-border-color: #0052b4;
+        --item-on-text-color: #a4bfd6;
+        --section-sub-color: #a1988a;
+        --section-title-color: #dbd7d0;
+        --blue-color: #045bdd;
+    }
 }
 
 * {
@@ -17,11 +44,11 @@
 body {
     margin: 0;
     border: 0;
-    background-color: antiquewhite;
+    background-color: var(--bg-color);
 }
 
 main {
-    background-color: white;
+    background-color: var(--main-color);
     width: 70%;
     margin: 0 auto;
     box-shadow: 0px 0px 40px -14px rgb(0 0 0 / 70%);
@@ -59,11 +86,11 @@ fieldset {
 }
 
 .section_title {
-    color: #5b748f;
+    color: var(--section-sub-color);
 }
 
 .section_subtitle {
-    color: #042140;
+    color: var(--section-title-color);
     font-weight: bold;
     font-size: 24px;
     margin-left: 40px;
@@ -75,21 +102,21 @@ fieldset {
 /*//////////////////       ZONE DE TEXTE         ///////////////////*/
 
 .item {
-    background-color: rgb(250, 250, 250);
+    background-color: var(--item-bg-color);
     height: 100%;
-    border: 0.15em solid #ededed;
+    border: 0.15em solid var(--item-border-color);
     margin-left: 5px;
     border-radius: 10px;
     transition: 0.3s;
     text-indent: 8px;
-    color: #99a2b1;
+    color: var(--item-text-color);
     justify-content: center;
 }
 
 .item:focus {
-    border: 0.125em solid #0c6dde;
+    border: 0.125em solid var(--item-on-border-color);
     animation: click 0.3;
-    color: #344964;
+    color: var(--item-on-text-color);
 }
 .item::placeholder {
     color: #848c99;
@@ -126,6 +153,7 @@ input[type="text"] {
 
 .section_input_text > .section_title_label {
     height: auto;
+    color: var(--main-text-color);
 }
 
 label {
@@ -134,7 +162,7 @@ label {
 
 
 .section_input > div {
-    width: 150px;
+    width: 139px;
     /* height: 35px; */
     margin: 5px;
 }
@@ -154,13 +182,13 @@ label {
 .section_input > div > label, .section_input_simple > div > label  {
     height: 100%;
     width: 100%;
-    border: 0.125em solid #ededed;
+    border: 0.125em solid var(--item-border-color);
     border-radius: 10px;
-    background-color: rgb(250, 250, 250);
+    background-color: var(--item-bg-color);
     margin: 0;
     transition: 0.3s;
     text-align: center;
-    color: #99a2b1;
+    color: var(--item-text-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -179,9 +207,9 @@ label {
 /*//////////////////       BOUTONS CHECKED         ///////////////////*/
 
 .section_input > div > input:checked ~ label, .section_input_simple > div > input:checked ~ label  {
-    border: 0.125em solid #0c6dde;
+    border: 0.125em solid var(--item-on-border-color);
     animation: click 0.3;
-    color: #344964;
+    color: var(--item-on-text-color);
 }
 
 .section_input > div > input.expand:checked ~ label {
@@ -213,7 +241,7 @@ label {
 }
 
 .sous_section_subtitle {
-    color: #042140;
+    color: var(--section-title-color);
     font-weight: bold;
     font-size: 20px;
     margin-left: 40px;
@@ -253,6 +281,10 @@ label {
     -webkit-appearance: none;
 }
 
+span {
+    color: var(--main-text-color);
+}
+
 /*  Double slide superposée 
 .doubleSlide input {
     position: absolute;
@@ -290,18 +322,18 @@ label {
 /*//// Double slide Mozzila ////*/
 
 .v_doubleSlide input:first-of-type::-moz-range-progress {
-    background-color: white;
+    background-color: var(--item-bg-color);
     height: 4px;    
 }
 
 .v_doubleSlide input:first-of-type::-moz-range-track{
     background-color: var(--blue-color);
     height: 4px;
-    border : 0.5px solid black;
+    border : 0.5px solid var(--main-text-color);
     border-right: 0.5px solid var(--blue-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-left: 2px black solid
+    border-left: 2px var(--main-text-color) solid
 }
 
 .v_doubleSlide input:last-of-type::-moz-range-progress {
@@ -310,8 +342,8 @@ label {
 }
 
 .v_doubleSlide input:last-of-type::-moz-range-track {
-    background-color: white;
-    border : 0.5px solid black;
+    background-color: var(--main-color);
+    border : 0.5px solid var(--main-text-color);
     border-left: 0.5px solid var(--blue-color);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -323,7 +355,7 @@ label {
     border : 6px solid var(--blue-color);
     width: 14px;
     height:14px;
-    background-color: white;
+    background-color: var(--main-color);
 }
 
 
@@ -350,7 +382,7 @@ label {
     border : 6px solid var(--blue-color);
     width: 24px;
     height: 24px;
-    background-color: white;
+    background-color: var(--main-color);
     margin-top: -8px;
 }
 

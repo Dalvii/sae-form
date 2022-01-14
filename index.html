@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
     <title>Formulaire</title>
@@ -17,15 +18,25 @@
 </head>
 
 <body>
+    <span title="La couleur s'adapte à celle de votre système" class="color"></span>
+    
     <main>
+        <header>
+            <div class="title">
+                <h1>Formulaire</h1>
+                <h2>Descripgiord grfjidop grdjiopg jrid jigporjiorgdj igporjfe sse fsfe fe ssf sfefes fesfes fes fesfesfes fes fesfesfe fse sfe fse sfe efio</h2>
+            </div>
+        </header>
+        
+
         <form>
 
             <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <!--                                                    Identification                                              -->
+            <!--                                               Identification                                               -->
             <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <fieldset>
                 <div class="section_title">
-                    <div class="section_title_icon">1</div>
+                    <div class="section_title_icon">☺</div>
                     <div class="section_title_label">Question 1</div>
                 </div>
                 <div class="section_subtitle">Vous êtes :</div>
@@ -50,28 +61,39 @@
                     </div>
                     <div>
                         <input type="radio" name="qIntro1_r" id="qIntro1_r3" />
-                        <label for="qIntro1_r3">👽 Autre</label>
+                        <label for="qIntro1_r3">🏳️‍🌈 Autre</label>
+                    </div>
+                </div>
+                <div class="section_input_text">
+                    <div class="section_title_label">Email :</div>
+                </div>
+                <div class="section_input_text">
+                    <div>
+                        <input type="email" placeholder="jean-dupont@form.fr" class="item" required />
+                    </div>
+                </div>
+                <div class="section_input_text">
+                    <div class="section_title_label">Numéro de téléphone :</div>
+                </div>
+                <div class="section_input_text">
+                    <div>
+                        <input type="tel" pattern="[0-9]{10}" placeholder="06 xx xx xx xx" class="item phone" required />
                     </div>
                 </div>
                 <div class="section_input_text">
                     <div class="section_title_label">Localisation :</div>
                 </div>
-                <div class="section_input">
-                    <div>
-                        <input type="radio" name="qIntro2_r" id="qIntro2_r1" />
-                        <label for="qIntro2_r1">🏢 Nice</label>
+                <div class="section_input_adresse" style="display: flex;">
+                    <div style="flex: 0.3; margin-right: 10px;">
+                        <input type="text" pattern="[0-9]{5}" placeholder="Code postal" class="item" required />
                     </div>
-                    <div>
-                        <input type="radio" name="qIntro2_r" id="qIntro2_r2" />
-                        <label for="qIntro2_r2">🏠 Banlieue</label>
+                    <div style="flex: 0.7;">
+                        <input type="text" placeholder="Ville" class="item" required />
                     </div>
+                </div>
+                <div class="section_input_adresse">
                     <div>
-                        <input type="radio" name="qIntro2_r" id="qIntro2_r3" />
-                        <label for="qIntro2_r3">🗻 Arrière Pays</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="qIntro2_r" id="qIntro2_r4" />
-                        <label for="qIntro2_r4">🌎 Autre</label>
+                        <input type="text" placeholder="Adresse" class="item" required />
                     </div>
                 </div>
                 <div class="section_input_text">
@@ -79,20 +101,20 @@
                 </div>
                 <div class="section_input">
                     <div>
-                        <input type="radio" name="qIntro3_r" id="qIntro3_r1" />
-                        <label for="qIntro3_r1">🍀 Sans emploi</label>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r1" />
+                        <label for="qIntro2_r1">🍀 Sans emploi</label>
                     </div>
                     <div>
-                        <input type="radio" name="qIntro3_r" id="qIntro3_r2" />
-                        <label for="qIntro3_r2">💼 Salarié</label>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r2" />
+                        <label for="qIntro2_r2">💼 Salarié</label>
                     </div>
                     <div>
-                        <input type="radio" name="qIntro3_r" id="qIntro3_r3" />
-                        <label for="qIntro3_r3">📣 Entrepreneur</label>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r3" />
+                        <label for="qIntro2_r3">📣 Entrepreneur</label>
                     </div>
                     <div>
-                        <input type="radio" name="qIntro3_r" id="qIntro3_r4" />
-                        <label for="qIntro3_r4">👴 Retraité</label>
+                        <input type="radio" name="qIntro2_r" id="qIntro2_r4" />
+                        <label for="qIntro2_r4">👴 Retraité</label>
                     </div>
                 </div>
             </fieldset>
@@ -439,8 +461,14 @@
                 </div>
             </fieldset>
 
-            <button type="submit">test</button>
+            <div class="submit">
+                <button type="submit">Envoyer</button>
+            </div>
         </form>
+
+        <footer>
+            Théo Vidal - Titouan Lacombre--Fabre
+        </footer>
     </main>
 </body>
 

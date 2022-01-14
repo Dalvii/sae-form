@@ -1,9 +1,10 @@
+@charset "UTF-8";
+
 /* Police d'ecriture */
 @font-face {
     font-family: "Haas Grotesk Med";
     src: url("/fonts/NHaasGroteskTXPro-65Md.ttf") format("truetype");
 }
-
 
 :root {
     --bg-color: #ececec;
@@ -17,7 +18,7 @@
     --section-sub-color: #5b748f;
     --section-title-color: #042140;
     --blue-color: #045bdd;
-    
+    --color-label: '🌞';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +26,7 @@
         --bg-color: #2b2b2b;
         --main-color: #0e1011;
         --main-text-color: #f2f0ed;
-        --item-bg-color: #111314;
+        --item-bg-color: #16181a;
         --item-border-color: #2e3335;
         --item-text-color: #b4aca1;
         --item-on-border-color: #0052b4;
@@ -33,12 +34,17 @@
         --section-sub-color: #a1988a;
         --section-title-color: #dbd7d0;
         --blue-color: #045bdd;
+        --color-label: '🌙';
     }
 }
 
 * {
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
+}
+
+::selection {
+    background-color: gray;
 }
 
 body {
@@ -50,7 +56,7 @@ body {
 main {
     background-color: var(--main-color);
     width: 70%;
-    margin: 0 auto;
+    margin: 15px auto;
     box-shadow: 0px 0px 40px -14px rgb(0 0 0 / 70%);
     -webkit-box-shadow: 0px 0px 40px -14px rgb(0 0 0 / 70%);
     -moz-box-shadow: 0px 0px 40px -14px rgba(0,0,0,0.7);
@@ -63,9 +69,65 @@ fieldset {
     padding: 30px 0;
 }
 
+/* Logo mode couleur */
+span.color {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+span.color::after {
+    content: var(--color-label);
+    font-size: 20px;
+}
+
+
+/* Titre de la page */
+.title h1, .title h2 {
+    color: var(--main-text-color);
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+    margin-bottom: 20px;
+}
+.title {
+    padding-top: 20px;
+}
+
+
+/* Bouton envoyer */
+.submit {
+    text-align: center;
+
+}
+button {
+    width: 150px;
+    height: 50px;
+    border: 0.15em solid var(--item-border-color);
+    background-color: var(--blue-color);
+    color: var(--main-text-color);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s
+}
+button:hover {
+    background-color: var(--item-on-border-color);
+    transform: translateY(4px);
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    color: var(--section-sub-color);
+    padding: 30px 0;
+}
+
+
 
 /*//////////////////////////////////////////////////////////////////*/
-/*///////////////        TITRE/SOUS TITRE/LOGO         ///////////////*/
+/*//////////////       TITRE/SOUS TITRE/LOGO         ///////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
 .section_title, .sous_question_section_title {
@@ -122,14 +184,30 @@ fieldset {
     color: #848c99;
 }
 
-input[type="text"] {
+.section_input_text > div > input[type="text"] {
     width: 50%;
 }
 
+.section_input_adresse {
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 80%;
+}
+.section_input_adresse > div {
+    height: 37px;
 
+}
+.section_input_adresse > div > input {
+    width: 100%;
+}
+
+
+input:not([type='range']):valid {
+    border: 0.15em solid var(--item-on-border-color);
+}
 
 /*//////////////////////////////////////////////////////////////////*/
-/*//////////////////        BOUTONS         ///////////////////*/
+/*//////////////////////        BOUTONS         ////////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
 
@@ -220,13 +298,14 @@ label {
 .section_input > div > input:checked ~ div {
     display: block;
     opacity: 1;
+    visibility: visible;
     transform: translateY(-85px);
 }
 
 
 
 
-/*//////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////*/
 /*//////////////////       SOUS QUESTIONS         ///////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
@@ -234,8 +313,9 @@ label {
 
 .sous_question {
     display: none;
-    transition: 1s;
+    transition: all 1s;
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     margin-top: 10px;
 }
@@ -279,6 +359,7 @@ label {
     width: 100%;
     margin: 0;
     -webkit-appearance: none;
+    background-color: var(--main-color);
 }
 
 span {
@@ -292,6 +373,7 @@ span {
     z-index: 1;
 
 }
+
 .barre {
     border-bottom: 7px solid blue;
     width: 100%;
@@ -299,6 +381,7 @@ span {
     z-index: 0;
     position: absolute;
 }
+
 .doubleSlide input::-webkit-slider-thumb{
     -webkit-appearance: none;
     height: 20px;
@@ -307,12 +390,15 @@ span {
     background-color: rgb(170, 2, 2);
     color: red;
 }
+
 .doubleSlide input:first-of-type::-webkit-slider-thumb{
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
 }
+
 .doubleSlide input:last-of-type::-webkit-slider-thumb{
     clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
+
 .doubleSlide input::-webkit-slider-runnable-track{
     z-index: 0;
     height: 0px;
@@ -329,11 +415,11 @@ span {
 .v_doubleSlide input:first-of-type::-moz-range-track{
     background-color: var(--blue-color);
     height: 4px;
-    border : 0.5px solid var(--main-text-color);
+    border : 0.5px solid var(--section-sub-color);
     border-right: 0.5px solid var(--blue-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-left: 2px var(--main-text-color) solid
+    border-left: 2px var(--section-sub-color) solid
 }
 
 .v_doubleSlide input:last-of-type::-moz-range-progress {
@@ -343,8 +429,8 @@ span {
 
 .v_doubleSlide input:last-of-type::-moz-range-track {
     background-color: var(--main-color);
-    border : 0.5px solid var(--main-text-color);
-    border-left: 0.5px solid var(--blue-color);
+    border : 0.5px solid var(--section-sub-color);
+    border-left: 0.5px solid var(--section-sub-color);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     height: 4px;    
@@ -391,7 +477,7 @@ span {
 
 
 .v_echelle {
-    width: 97%;
+    width: 98.5%;
     margin: 0 auto;
     margin-top :14px;
 }
@@ -486,7 +572,7 @@ span {
         margin-left: 10px;
     }
 
-    .section_input_simple, .section_input, .section_range, .section_input_text {
+    .section_input_simple, .section_input, .section_range, .section_input_text, .section_input_adresse {
         margin: 10px auto;
         width: 100%;
     }
@@ -498,5 +584,8 @@ span {
     }
     .section_input_simple > div {
         width: 100%;
+    }
+    .title h1, .title h2 {
+        width: 80%;
     }
 }

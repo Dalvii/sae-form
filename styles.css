@@ -1,15 +1,9 @@
+/* Police d'ecriture */
 @font-face {
     font-family: "Haas Grotesk Med";
     src: url("/fonts/NHaasGroteskTXPro-65Md.ttf") format("truetype");
 }
-/* @font-face {
-    font-family: "Haas Grotesk Light";
-    src: url("/fonts/NHaasGroteskTXPro-55Md.ttf") format("truetype"),
-}
-@font-face {
-    font-family: "Haas Grotesk Bold";
-    src: url("/fonts/NHaasGroteskTXPro-75Bd.ttf") format("truetype"),
-} */
+
 
 :root {
     --blue-color: #045bdd
@@ -19,7 +13,6 @@
     box-sizing: border-box;
     font-family: 'Work Sans', sans-serif;
 }
-
 
 body {
     margin: 0;
@@ -42,6 +35,11 @@ fieldset {
     margin: 0 auto;
     padding: 30px 0;
 }
+
+
+/*//////////////////////////////////////////////////////////////////*/
+/*///////////////        TITRE/SOUS TITRE/LOGO         ///////////////*/
+/*//////////////////////////////////////////////////////////////////*/
 
 .section_title, .sous_question_section_title {
     display: flex;
@@ -72,6 +70,10 @@ fieldset {
     margin-top: 5px;
 }
 
+
+
+/*//////////////////       ZONE DE TEXTE         ///////////////////*/
+
 .item {
     background-color: rgb(250, 250, 250);
     height: 100%;
@@ -97,6 +99,11 @@ input[type="text"] {
     width: 50%;
 }
 
+
+
+/*//////////////////////////////////////////////////////////////////*/
+/*//////////////////        BOUTONS         ///////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
 
 
 .section_input {
@@ -164,6 +171,12 @@ label {
     height: 37px;
 }
 
+#q7 > .section_input > div > label {
+    height: 60px;
+}
+
+
+/*//////////////////       BOUTONS CHECKED         ///////////////////*/
 
 .section_input > div > input:checked ~ label, .section_input_simple > div > input:checked ~ label  {
     border: 0.125em solid #0c6dde;
@@ -181,6 +194,14 @@ label {
     opacity: 1;
     transform: translateY(-85px);
 }
+
+
+
+
+/*//////////////////////////////////////////////////////////////////*/
+/*//////////////////       SOUS QUESTIONS         ///////////////////*/
+/*//////////////////////////////////////////////////////////////////*/
+
 
 
 .sous_question {
@@ -214,11 +235,6 @@ label {
 .section_input_simple > div > label {
     justify-content: start;
     padding-left: 15px;
-}
-
-
-#q7 > .section_input > div > label {
-    height: 60px;
 }
 
 

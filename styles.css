@@ -18,7 +18,7 @@
     --section-sub-color: #5b748f;
     --section-title-color: #042140;
     --blue-color: #045bdd;
-    --color-label: '🌞';
+    --color-label : '🌞';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,6 +69,16 @@ fieldset {
     padding: 30px 0;
 }
 
+form > div {
+    width: 65%;
+    height: 1px;
+    background-color: var(--item-text-color);
+    border-radius: 2px;
+    margin: auto;
+    margin-top : 50px;
+    margin-bottom: 50px;
+}
+
 /* Logo mode couleur */
 span.color {
     position: absolute;
@@ -76,6 +86,7 @@ span.color {
     width: 40px;
     height: 40px;
 }
+
 span.color::after {
     content: var(--color-label);
     font-size: 20px;
@@ -90,6 +101,7 @@ span.color::after {
     width: 60%;
     margin-bottom: 20px;
 }
+
 .title {
     padding-top: 20px;
 }
@@ -100,6 +112,7 @@ span.color::after {
     text-align: center;
 
 }
+
 button {
     width: 150px;
     height: 50px;
@@ -112,6 +125,7 @@ button {
     cursor: pointer;
     transition: 0.3s
 }
+
 button:hover {
     background-color: var(--item-on-border-color);
     transform: translateY(4px);
@@ -180,6 +194,7 @@ footer {
     animation: click 0.3;
     color: var(--item-on-text-color);
 }
+
 .item::placeholder {
     color: #848c99;
 }
@@ -193,17 +208,26 @@ footer {
     margin-top: 10px;
     width: 80%;
 }
+
 .section_input_adresse > div {
     height: 37px;
 
 }
+
 .section_input_adresse > div > input {
     width: 100%;
 }
 
-
 input:not([type='range']):valid {
     border: 0.15em solid var(--item-on-border-color);
+}
+
+.sous_question .section_input_text > div {
+    transform: translate(-250px, 50px);
+}
+
+.sous_question .section_input_text > div > input[type="text"] {
+    width: 80%;
 }
 
 /*//////////////////////////////////////////////////////////////////*/
@@ -238,7 +262,6 @@ label {
     display: block;
 }
 
-
 .section_input > div {
     width: 139px;
     /* height: 35px; */
@@ -254,8 +277,6 @@ label {
 .section_input > div > input, .section_input_simple > div > input {
     display: none;
 }
-
-
 
 .section_input > div > label, .section_input_simple > div > label  {
     height: 100%;
@@ -277,10 +298,9 @@ label {
     height: 37px;
 }
 
-#q7 > .section_input > div > label {
+#q7 > .section_input > div .sous_question .section_input label {
     height: 60px;
 }
-
 
 /*//////////////////       BOUTONS CHECKED         ///////////////////*/
 
@@ -301,8 +321,6 @@ label {
     visibility: visible;
     transform: translateY(-85px);
 }
-
-
 
 
 /*////////////////////////////////////////////////////////////////////*/
@@ -327,6 +345,7 @@ label {
     margin-left: 40px;
     margin-top: 10px;
 }
+
 .sous_section_subtitle::before {
     display: inline-block;
     content: " ";
@@ -339,12 +358,10 @@ label {
     background-color: var(--blue-color);
 }
 
-
 .section_input_simple > div > label {
     justify-content: start;
     padding-left: 15px;
 }
-
 
 
 /*//////////////////////////////////////////////////////////////////*/
@@ -419,7 +436,7 @@ span {
     border-right: 0.5px solid var(--blue-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-left: 2px var(--section-sub-color) solid
+    border-left: 2px var(--section-sub-color) solid;
 }
 
 .v_doubleSlide input:last-of-type::-moz-range-progress {
@@ -475,7 +492,6 @@ span {
 
 /*//// Echelle et graduation ////*/
 
-
 .v_echelle {
     width: 98.5%;
     margin: 0 auto;
@@ -504,19 +520,41 @@ span {
 }
 
 
+/*Enmplacement des nombres */
 
+.v_nombre span {
+    font-size: 15px;margin-top: 1px;
+}
 
+.v_nombre span::after {
+    content: "€";
+    position: absolute;
+    font-size: 15px;
+}
+
+.v_nombre span:first-of-type::before {
+    content: "2";
+    position: absolute;
+    font-size: 15px;
+    transform: translateX(-8.5px);
+}
+
+.v_nombre span:nth-last-child(-n+2)::after {
+    content: "0€";
+    position: absolute;
+    font-size: 15px;
+} 
 
 /*////////////////////////////////////////////////////////////////////*/
 /*///////////////           Choix 1 à 10             ////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
 
-.section_input_1a10 {
+.section_input_q4_r {
     display : flex;
     flex-wrap: nowrap;
 }
 
-.section_input_1a10 div {
+.section_input_q4_r div {
     width: auto;
     flex : 1;
 }
@@ -536,11 +574,9 @@ span {
 }
 
 
-
 /*////////////////////////////////////////////////////////////////////*/
 /*///////////////             Animations            /////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
-
 
 @keyframes click {
     0% {
@@ -559,7 +595,6 @@ span {
 /*////////////////////////////////////////////////////////////////////*/
 /*///////////////             Responsive            /////////////////*/
 /*//////////////////////////////////////////////////////////////////*/
-
 
 @media screen and (max-width: 767px) { 
     main {
